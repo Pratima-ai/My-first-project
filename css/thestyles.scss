@@ -1,0 +1,520 @@
+/**
+ * Created by Joshua Tamang
+*/
+
+@import "components/fonts_and_colors";
+
+
+
+/*------------------------------------ Site Wide Starts -----------------------------------*/
+body{
+  &.show-menu{
+    #menu-wrapper{
+      opacity: 1;
+      height: 100vh;
+      pointer-events:initial;
+    }
+    #header-wrapper{
+      .header-container{
+        .logo-nav-container{
+          .nav-container{
+            span{
+              &:nth-child(1){
+                transform: rotate(45deg);
+              }
+              &:nth-of-type(2){
+                transform: rotate(-45deg);
+                width: 45px;
+              }
+              &:nth-child(3){
+                display: none;
+                transition: all 0.5s ease;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/*------------------------------------- Site Wide Ends ------------------------------------*/
+
+/*--------------------------------- Header Wrapper Starts ---------------------------------*/
+#header-wrapper{
+  .header-container{
+    padding: 15px 100px;
+    background: grey;
+    box-shadow: 0px 0px 10px 2px #00000014;
+    .logo-nav-container{
+      display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .nav-container{
+      span{
+        height: 5px;
+        width: 40px;
+        background: blue;
+        display: block;
+        &:not(:last-of-type){
+          margin-bottom: 3px;
+        }
+        &:nth-of-type(2){
+          width: 35px;
+        }
+      }
+      .nav-container{
+        span{
+          height: 6px;
+          width:5px;
+        }
+      }
+
+      }
+    }
+  }
+}
+#menu-wrapper{
+  height: 100vh;
+    background: purple;
+    position: fixed;
+    width: 100%;
+    z-index: 29;
+    opacity: 0;
+    position: fixed;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    pointer-events: none;
+
+    
+    ul{
+      li{
+        &:not(:last-of-type){
+          padding-bottom:30px;
+          
+        }
+        a{
+          font-size: 50px;
+          font-weight: bold;
+          color:yellow;
+          padding-bottom: 3px;
+          position: relative;
+          &::before{
+             position: absolute;
+             width: 0px;
+             content: " ";
+             height: 3px;
+             bottom: -3px;
+             left: 0;
+             background: yellow;
+             transition: all 0.6s ease;
+          }
+          &:hover{
+          &::before{
+            width: 100%;
+            transition: all 0.6s ease; 
+          }
+          }
+        }
+    
+        
+      }
+      
+    }
+    .follow{
+      p{
+        color:white;
+        padding-bottom: 5px;
+      }
+      ul{
+
+        display: flex;
+        li{
+            &:not(:last-of-type){
+              padding-right: 30px;
+            }
+              a{
+                color: white;
+                position: relative;
+                &::before{
+                  position: absolute;
+                  content: '';
+                  width: 0px;
+                  background: #fff;
+                  bottom: 0;
+                  height: 3px;
+                  left: 0;
+                  transition: all 0.6s ease;
+                }
+                &:hover{
+                  &::before{
+                    width: 100%;
+                    transition: all 0.6s ease;
+                  }
+                }
+
+              }
+      }
+    }
+}
+}
+
+/*--------------------------------- Header Wrapper Starts ---------------------------------*/
+
+/*-------------------------------- Content Wrapper Starts ---------------------------------*/
+#content-wrapper{
+  #home-page{
+    .who-we-are-section{
+      background:grey;
+      .custom-container{
+        .content{
+          display: flex;
+          .content-left{
+            width: 30%;
+            .section-title{ 
+              h1{
+                padding-left: 90px;
+                position: relative;
+                &::after{
+                  position: absolute;
+                  content: "";
+                  width: 70px;
+                  height:3px;
+                  background: greenyellow;
+                  top: 50%;
+                left: 0;
+                }
+              }
+            }
+          }
+          .content-right{
+            width: 70%;
+          .section-content{
+            h1{
+              margin-bottom: 40px;
+            }
+          }
+          }
+        }
+      }
+    }
+    .case-section{
+      .custom-container{
+        .heading{
+          align-items: center;
+          display: flex;
+          justify-content: space-between;
+          .section-title{
+            h1{
+              padding-left: 90px;
+              position: relative;
+              &::after{
+                position:absolute;
+                content: "";
+                width:70px;
+                height:3px;
+                background: greenyellow;
+              left: 0%;
+              top: 50%;
+              }
+      
+            }
+          }
+          ul.nav-tabs{
+            display: flex;
+            margin: auto;
+            border-bottom: none;
+            li.nav-item{
+              a.nav-link{
+                font-size: 30px;
+                font-weight: bold;
+              }
+            }
+          }
+        }
+        .tab-content{
+          margin-top: 100px; 
+          .tab-pane{
+            margin-top: 100px;
+            .case-studies-wrapper{
+              display:flex;
+              flex-wrap: wrap;
+              .case-studies-item{
+                width: 33.33%;
+              }
+            }
+          }
+        }
+      }
+    }
+    .what-we-do-section{
+      .custom-container{
+        .heading{
+          display: flex; 
+          .heading-left{
+            width: 30%;
+            .section-title{
+              h1{
+                color: grey;
+                padding-left: 90px;
+                position: relative;
+                &::after{
+                  content: "";
+                  position:absolute;
+                  width: 75px;
+                  height: 3px;
+                  background: greenyellow;
+                  left: 0;
+                  top: 50%;
+                }
+              }
+            }
+          }
+          .heading-right{
+            width: 70%;
+            .section-content{
+              h1,p{
+                color: grey;
+              }
+            }
+          }
+
+        }
+        .tabs-container{
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          .tab-item{
+            width: 33.33%;
+            padding:25px ;
+            text-align: center;
+            .img-container{
+              img{
+                width: auto;
+              }
+            }
+            .text-container{
+              h1{
+              }
+            }
+            .action{
+              padding-top: 50px;
+              a{
+                padding:8px 16px;
+                background: purple;
+                color: yellow;
+                border-radius: 45px;
+                display: inline-block;
+                border: 2px solid yellow;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  #about{
+    .services-section{
+      background:white;
+      margin: auto;
+      text-align: center;
+      .custom-container{
+        width: 1300px;
+        .section-title{
+          h1{
+            font-weight: bold;
+            color:purple;
+            &:hover{
+              color: black;
+            }
+          }
+        }
+      }
+      .description{
+        color:grey;
+      }
+    }
+   
+    }
+
+
+
+    }
+
+
+/*--------------------------------- Content Wrapper Ends ----------------------------------*/
+
+/*--------------------------------- Footer Wrapper Starts ---------------------------------*/
+#footer-wrapper{
+  background:purple; 
+  .top-footer{
+    text-align: center;
+    border-bottom: 2px solid #fff;
+    color: white;
+  }
+  .bottom-footer{
+    .custom-container{
+      .bottom-content{
+        display: flex;
+        justify-content: space-between;
+        .bottom-item{
+          p{
+            color: white;
+          }
+        }
+        .social-link{
+          ul{
+            display: flex;
+            li{
+              a{
+                color: #fff;
+              }
+              &:not(:nth-of-type(5)){
+                margin-right: 15px;
+              }
+              &:first-of-type{
+                a{
+                  color:blue;
+                }
+              }
+              &:nth-of-type(2){
+                a{
+                  background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+                    -webkit-background-clip: text; 
+                    -webkit-text-fill-color: transparent;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+/*---------------------------------- Footer Wrapper Ends ----------------------------------*/
+
+/*----------------------------------- Components Starts -----------------------------------*/
+.common-banner-section{
+  position: relative;
+  .img-container{
+    img{
+      width: 100%;
+      max-height: 100%;
+      overflow: hidden;
+    }
+  }
+  .text-container{
+    position: absolute;
+    left: 0;
+    right : 0; 
+    top: 50%;
+    color: #fff;
+     margin: 0 175px;
+    text-align: center;
+    h1{
+      margin-bottom: 40px  ;
+    }
+    h1,p{
+    font-weight: bold;
+    }
+  }
+}
+
+.common-remove-tab-style{
+  border-bottom: 0;
+  li{
+    a{
+      padding: 0;
+      background-color: transparent; 
+      border: 0;
+      &:focus, &:hover {
+        background-color: transparent;
+        border: 0;
+      }
+    }
+
+    &.active{
+      a{
+        background-color: transparent;
+        border: 0;
+        &:focus,&:hover{
+          background-color: transparent;
+          border: 0;
+      
+        }
+      }
+    }
+  }
+}
+/*------------------------------------ Components Ends ------------------------------------*/
+
+
+/*---------------------------------- Slick Slider Starts ----------------------------------*/
+/*---------------------------------- Slick Slider Starts ----------------------------------*/
+.slick-slider{
+  .slick-prev,.slick-next{
+
+  }
+
+  .slick-prev{
+    left: 20px;
+  }
+
+  .slick-next{
+    right: 20px;
+  }
+}
+/*----------------------------------- Slick Slider Ends -----------------------------------*/
+/*----------------------------------- Slick Slider Ends -----------------------------------*/
+
+/*------------------------------------- Mcustom Starts ------------------------------------*/
+/*-------------------------------------- Mcustom Ends -------------------------------------*/
+
+/*-------------------------------------- Modal Starts -------------------------------------*/
+.modal-dialog{
+  margin: 70px auto;
+  .modal-header{
+    padding: 0;
+    border: 0;
+    button{
+      position: absolute;
+      top: -30px;
+      right: 0;
+      color: #fff;
+      opacity: 1;
+    }
+  }
+  .modal-content{
+    background: black;
+    border-radius: 0;
+    .modal-body{
+      padding: 30px 26px;
+      .modal-loading-gif{
+        height: 130px;
+        position: relative;
+        img{
+          width: 30px;
+          position: absolute;
+          left: 0;
+          right: 0;
+          margin: auto;
+          top:50%;
+          transform: translateY(-50%);
+          -webkit-transform: translateY(-50%);
+          -moz-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+          -o-transform: translateY(-50%);
+        }
+      }
+      p,h1,h2,h3,h4,h5,h6,ul li,ol li,span{
+        color: #fff;
+      }
+    }
+  }
+}
+
+/*--------------------------------------- Modal Ends --------------------------------------*/
